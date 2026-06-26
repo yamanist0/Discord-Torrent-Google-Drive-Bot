@@ -1,7 +1,7 @@
-<h1 align="center">TorrentDriveBot 🚀</h1>
+<h1 align="center">TorrentDriveBot <img src="https://cdn.jsdelivr.net/npm/lucide-static/icons/rocket.svg" width="32" height="32" align="center" /></h1>
 
 <p align="center">
-  <b>An advanced Discord bot that automates torrent downloads and uploads them directly to your Google Drive.</b>
+  <b>Torrent to Google Drive: A smart discord bot to automatically download torrens and upload it directly to your Google Drive</b>
 </p>
 
 <p align="center">
@@ -12,23 +12,23 @@
 
 ---
 
-## 📖 About
+## <img src="https://cdn.jsdelivr.net/npm/lucide-static/icons/book-open.svg" width="24" height="24" align="center" /> About
 
-**TorrentDriveBot** is designed to automate torrent workflows. It helps bypass Google Drive's storage limits by chunking large files and allows you to track the entire process directly via Discord.
-
----
-
-## ✨ Key Features
-
-- **Direct Download:** Full support for Magnet links and `.torrent` files.
-- **Drive Integration:** Transfers files directly to your Drive via API.
-- **Auto-Chunking:** Automatically splits files larger than **16GB** to ensure successful uploads.
-- **Live Progress:** Real-time download/upload status updates in Discord.
-- **Secure:** User-based authentication via OAuth2.
+This bot is intended to be used for a torrent-ing system. To get around Google Drive's size restrictions, it splits up files and allows for direct viewing of the progress in discord.
 
 ---
 
-# ⚙️ Setup Guide
+## <img src="https://cdn.jsdelivr.net/npm/lucide-static/icons/sparkles.svg" width="24" height="24" align="center" /> Key Features
+
+-Direct Download : We support magnet link, and also support download through .torrent files directly.
+-Drive Integrations : Files will be directly uploaded into your drive using official Drive API.
+-Auto-Chunking : Automatically chunk any files which are bigger than 16GB in order to upload successfully.
+-Live Progress : Monitor download/upload live status in Discord.
+-Secure : User authentication through OAuth2.
+
+---
+
+# <img src="https://cdn.jsdelivr.net/npm/lucide-static/icons/settings.svg" width="28" height="28" align="center" /> Setup Guide
 
 <details>
 <summary><b>1. Google Drive API Setup</b></summary>
@@ -62,11 +62,6 @@ Fill in the placeholders at the top of your code:
 DISCORD_TOKEN = "YOUR_BOT_TOKEN_HERE"
 CLIENT_ID = "YOUR_GOOGLE_CLIENT_ID"
 CLIENT_SECRET = "YOUR_GOOGLE_CLIENT_SECRET"
-```
-
-</details>
-
----
 
 # 📦 Installation
 
@@ -78,7 +73,7 @@ pip install discord.py aiotorrent google-api-python-client google-auth-oauthlib
 
 ---
 
-# ▶️ Running the Bot
+# Running the Bot
 
 Start the bot with:
 
@@ -88,7 +83,7 @@ python bot.py
 
 ---
 
-# ⌨️ Commands
+# Commands
 
 | Command | Description |
 |---------|-------------|
@@ -100,6 +95,12 @@ python bot.py
 
 ---
 
-## 📄 License
+## License
 
-This project is provided for educational and personal use. Make sure you comply with your local laws and the terms of service of any platform you use.
+You can use this project freely as long as you follow local laws and the platform's terms of use.
+
+<br>
+<hr>
+<p align="center">
+  <small>Made with 🤍 by <a href="https://github.com/yamanist0">yamanist</a></small>
+</p>
