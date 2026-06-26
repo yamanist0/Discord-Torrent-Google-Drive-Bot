@@ -62,8 +62,9 @@ Fill in the placeholders at the top of your code:
 DISCORD_TOKEN = "YOUR_BOT_TOKEN_HERE"
 CLIENT_ID = "YOUR_GOOGLE_CLIENT_ID"
 CLIENT_SECRET = "YOUR_GOOGLE_CLIENT_SECRET"
+```
 
-# 📦 Installation
+# Installation
 
 Install the required libraries:
 
