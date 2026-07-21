@@ -251,14 +251,14 @@ class GoogleDriveManager:
         with open(source_path, 'rb') as source:
             source.seek(offset)
             with open(part_path, 'wb') as part:
-                leftover = part_size
-                while leftover > 0:
-                    chunk_size = min(8192, leftover)
+                remaining = part_size
+                while remaining > 0:
+                    chunk_size = min(8192, remaining)
                     chunk = source.read(chunk_size)
                     if not chunk:
                         break
                     part.write(chunk)
-                    leftover -= len(chunk)
+                    remaining -= len(chunk)
 
 class AsyncTorrentDownloader:
     """Pure Python async torrent downloader using aiotorrent"""
@@ -482,11 +482,11 @@ async def torrent(interaction: discord.Interaction, magnet: Optional[str] = None
     
     try:
         async def update_progress(msg: str):
-            nonlocal progress_msg
-            if progress_msg is None:
-                progress_msg = await interaction.followup.send(f"⏳ {msg}")
+            nonlocal status_update
+            if status_update is None:
+                status_update = await interaction.followup.send(f"⏳ {msg}")
             else:
-                await progress_msg.edit(content=f"⏳ {msg}")
+                await status_update.edit(content=f"⏳ {msg}")
         
         # Download torrent
         if file:
