@@ -376,6 +376,7 @@ class TorrentDriveBot(commands.Bot):
         self.oauth_manager = OAuthManager(CLIENT_ID, CLIENT_SECRET, SCOPES)
     
     async def setup_hook(self):
+        # sync the slash commands so they show up in discord
         await self.tree.sync()
         print(f"Bot ready! Logged in as {self.user}")
 
