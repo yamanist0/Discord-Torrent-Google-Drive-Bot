@@ -251,14 +251,14 @@ class GoogleDriveManager:
         with open(source_path, 'rb') as source:
             source.seek(offset)
             with open(part_path, 'wb') as part:
-                remaining = part_size
-                while remaining > 0:
-                    chunk_size = min(8192, remaining)
+                leftover = part_size
+                while leftover > 0:
+                    chunk_size = min(8192, leftover)
                     chunk = source.read(chunk_size)
                     if not chunk:
                         break
                     part.write(chunk)
-                    remaining -= len(chunk)
+                    leftover -= len(chunk)
 
 class AsyncTorrentDownloader:
     """Pure Python async torrent downloader using aiotorrent"""
