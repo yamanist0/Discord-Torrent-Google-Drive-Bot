@@ -378,7 +378,7 @@ class TorrentDriveBot(commands.Bot):
     async def setup_hook(self):
         # sync the slash commands so they show up in discord
         await self.tree.sync()
-        print(f"Bot ready! Logged in as {self.user}")
+print(f"Online as {self.user}")
 
 bot = TorrentDriveBot()
 
