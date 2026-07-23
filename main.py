@@ -115,7 +115,7 @@ class OAuthManager:
         flow = self.pending_flows[user_id]
         
         try:
-            # Exchange code for credentials
+# trade the code for real keys here please work
             flow.fetch_token(code=auth_code)
             credentials = flow.credentials
             
