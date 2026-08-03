@@ -359,7 +359,6 @@ class AsyncTorrentDownloader:
                                 )
                             last_progress = progress
             except Exception:
-                print("Error in progress monitor")
                 pass
             
             await asyncio.sleep(2)
@@ -430,7 +429,7 @@ async def callback(interaction: discord.Interaction, code: str):
         if "code=" in code:
             code = code.split("code=")[1].split("&")[0]
         
-        # Exchange code for tokens
+# trade this code for the tokens we need
         token_data = await bot.oauth_manager.exchange_code(user_id, code)
         
         if not token_data:
