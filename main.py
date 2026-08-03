@@ -359,6 +359,7 @@ class AsyncTorrentDownloader:
                                 )
                             last_progress = progress
             except Exception:
+                print("Error in progress monitor")
                 pass
             
             await asyncio.sleep(2)
