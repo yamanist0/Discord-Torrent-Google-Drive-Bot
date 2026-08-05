@@ -371,6 +371,7 @@ class TorrentDriveBot(commands.Bot):
         intents.message_content = True
         super().__init__(command_prefix="!", intents=intents)
         
+        print("Initializing bot components")
         self.token_manager = TokenManager(TOKEN_FILE)
         self.storage_manager = GoogleDriveManager(self.token_manager)
         self.torrent_downloader = AsyncTorrentDownloader(TEMP_DIR)
