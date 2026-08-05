@@ -358,6 +358,7 @@ class AsyncTorrentDownloader:
                                     f"{total_size / 1024 / 1024:.1f}MB)"
                                 )
                             last_progress = progress
+            # sometimes torrent fails to report size so we just ignore errors here
             except Exception:
                 pass
             
@@ -371,7 +372,6 @@ class TorrentDriveBot(commands.Bot):
         intents.message_content = True
         super().__init__(command_prefix="!", intents=intents)
         
-        print("Initializing bot components")
         self.token_manager = TokenManager(TOKEN_FILE)
         self.storage_manager = GoogleDriveManager(self.token_manager)
         self.torrent_downloader = AsyncTorrentDownloader(TEMP_DIR)
