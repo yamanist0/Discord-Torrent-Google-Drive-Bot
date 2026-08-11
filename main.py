@@ -296,7 +296,7 @@ class AsyncTorrentDownloader:
                 await progress_callback(f"Downloading: {torrent.name}")
             
             # Create progress monitoring task
-            monitor_task = asyncio.create_task(
+            mon_task = asyncio.create_task(
                 self._monitor_progress(session_id, torrent, progress_callback)
             )
             
@@ -310,9 +310,9 @@ class AsyncTorrentDownloader:
                 if progress_callback:
                     await progress_callback("Download complete!")
             finally:
-                monitor_task.cancel()
+                mon_task.cancel()
                 try:
-                    await monitor_task
+                    await mon_task
                 except asyncio.CancelledError:
                     pass
             
