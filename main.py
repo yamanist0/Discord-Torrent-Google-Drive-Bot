@@ -329,7 +329,7 @@ class AsyncTorrentDownloader:
             else:
                 return str(download_dir)
         
-        print(f"Download failed for session {session_id}: {e}")
+print(f"Session {session_id} failed: {e}")
         except Exception as e:
             if session_id in self.active_downloads:
                 del self.active_downloads[session_id]
