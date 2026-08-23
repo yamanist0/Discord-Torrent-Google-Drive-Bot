@@ -249,6 +249,7 @@ class GoogleDriveManager:
         """Create a part file using buffered reading"""
         offset = part_num * part_size
         
+        print(f"Creating part {part_num} with offset {offset}")
         with open(source_path, 'rb') as source:
             source.seek(offset)
             with open(part_path, 'wb') as part:
