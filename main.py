@@ -378,7 +378,7 @@ class TorrentDriveBot(commands.Bot):
         self.token_manager = TokenManager(TOKEN_FILE)
         self.storage_manager = GoogleDriveManager(self.token_manager)
         self.torrent_downloader = AsyncTorrentDownloader(TEMP_DIR)
-        self.oauth_manager = OAuthManager(CLIENT_ID, CLIENT_SECRET, SCOPES)
+        self.oauth_mgr = OAuthManager(CLIENT_ID, CLIENT_SECRET, SCOPES)
     
     async def setup_hook(self):
         # sync the slash commands so they show up in discord
