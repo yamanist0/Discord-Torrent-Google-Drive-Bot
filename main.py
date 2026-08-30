@@ -58,7 +58,7 @@ class TokenManager:
     
     def save_token(self, user_id: int, token_data: dict):
         """Save user token"""
-        print(f"saving token for user {user_id}")
+print(f"Saving token: user {user_id}")
         self.tokens[user_id] = token_data
         self._save_tokens()
     
