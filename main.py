@@ -248,11 +248,11 @@ class GoogleDriveManager:
     def _create_part_file(self, source_path: str, part_path: str, 
                          part_num: int, part_size: int):
         """Create a part file using buffered reading"""
-        offset = part_num * part_size
+        shift = part_num * part_size
         
-        print(f"Creating part {part_num} with offset {offset}")
+        print(f"Creating part {part_num} with shift {shift}")
         with open(source_path, 'rb') as source:
-            source.seek(offset)
+            source.seek(shift)
             with open(part_path, 'wb') as part:
                 remaining = part_size
                 while remaining > 0:
