@@ -189,7 +189,7 @@ class GoogleDriveManager:
                 chunksize=CHUNK_SIZE
             )
             
-            print(f"Uploading {file_name}")
+print(f"Uploading: {file_name}")
             request = service.files().create(
                 body=file_metadata,
                 media_body=media,
