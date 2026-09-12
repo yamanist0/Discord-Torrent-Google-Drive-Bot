@@ -65,6 +65,7 @@ print(f"Saving token: user {user_id}")
     def get_token(self, user_id: int) -> Optional[dict]:
         """Get user token"""
         print(f"Fetching token for user id: {user_id}")
+        # Using get prevents crashes if the user is not found
         return self.tokens.get(user_id)
     
     def remove_token(self, user_id: int):
