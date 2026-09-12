@@ -65,7 +65,6 @@ print(f"Saving token: user {user_id}")
     def get_token(self, user_id: int) -> Optional[dict]:
         """Get user token"""
         print(f"Fetching token for user id: {user_id}")
-        # Using get prevents crashes if the user is not found
         return self.tokens.get(user_id)
     
     def remove_token(self, user_id: int):
@@ -122,7 +121,7 @@ class OAuthManager:
             flow.fetch_token(code=auth_code)
             credentials = flow.credentials
             
-            token_data = {
+            payload = {
                 'token': credentials.token,
                 'refresh_token': credentials.refresh_token,
                 'token_uri': credentials.token_uri,
@@ -132,7 +131,7 @@ class OAuthManager:
             }
             
             del self.pending_flows[user_id]
-            return token_data
+            return payload
         except Exception as e:
             if user_id in self.pending_flows:
                 del self.pending_flows[user_id]
