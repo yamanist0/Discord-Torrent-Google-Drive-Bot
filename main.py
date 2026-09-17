@@ -107,6 +107,7 @@ class OAuthManager:
         )
         
         self.pending_flows[user_id] = flow
+        print(f"Generated auth URL for user {user_id}: {auth_url}")
         return auth_url
     
     async def exchange_code(self, user_id: int, auth_code: str) -> Optional[dict]:
