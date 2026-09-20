@@ -343,7 +343,7 @@ print(f"Session {session_id} failed: {e}")
     
     async def _monitor_progress(self, session_id: str, torrent: Torrent, 
                                progress_callback):
-        """Monitor download progress"""
+        """Monitor download prog"""
         last_progress = 0
         
         while session_id in self.active_downloads:
@@ -353,16 +353,16 @@ print(f"Session {session_id} failed: {e}")
                     downloaded = sum(f.get_bytes_downloaded() for f in torrent.files)
                     
                     if total_size > 0:
-                        progress = (downloaded / total_size) * 100
+                        prog = (downloaded / total_size) * 100
                         
-                        if abs(progress - last_progress) >= 1:
+                        if abs(prog - last_progress) >= 1:
                             if progress_callback:
                                 await progress_callback(
-                                    f"Progress: {progress:.1f}% "
+                                    f"Progress: {prog:.1f}% "
                                     f"({downloaded / 1024 / 1024:.1f}MB / "
                                     f"{total_size / 1024 / 1024:.1f}MB)"
                                 )
-                            last_progress = progress
+                            last_progress = prog
             # sometimes torrent fails to report size so we just ignore errors here
             except Exception:
                 pass
