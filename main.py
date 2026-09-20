@@ -252,7 +252,7 @@ print(f"Uploading: {file_name}")
         """Create a part file using buffered reading"""
         shift = part_num * part_size
         
-        print(f"Creating part {part_num} with shift {shift}")
+print(f"Writing part {part_num} at offset {shift}")
         with open(source_path, 'rb') as source:
             source.seek(shift)
             with open(part_path, 'wb') as part:
