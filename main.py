@@ -160,6 +160,7 @@ class GoogleDriveManager:
         )
         
         # Refresh if expired
+        print(f"Refreshing expired credentials for user {user_id}")
         if creds.expired and creds.refresh_token:
             creds.refresh(Request())
             # Save refreshed token
