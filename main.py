@@ -588,6 +588,7 @@ async def torrent(interaction: discord.Interaction, magnet: Optional[str] = None
 async def logout(interaction: discord.Interaction):
     """Remove user authorization"""
     user_id = interaction.user.id
+    # delete the token so they are logged out
     bot.token_manager.remove_token(user_id)
     await interaction.response.send_message(
         "✅ Successfully logged out. Your authorization has been removed.",
