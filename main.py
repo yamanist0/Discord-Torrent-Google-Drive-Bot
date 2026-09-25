@@ -75,6 +75,7 @@ print(f"Saving token: user {user_id}")
     
     def get_all_tokens(self) -> List[dict]:
         """Get all valid tokens for multi-user uploads"""
+        # return all tokens as a list so the user gets them all
         return list(self.tokens.values())
 
 class OAuthManager:
