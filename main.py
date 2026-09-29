@@ -54,6 +54,7 @@ class TokenManager:
     def _save_tokens(self):
         """Save tokens to file"""
         with open(self.token_file, 'w') as f:
+            # convert keys to strings because json needs them that way
             json.dump({str(k): v for k, v in self.tokens.items()}, f, indent=2)
     
     def save_token(self, user_id: int, token_data: dict):
