@@ -253,6 +253,7 @@ print(f"Uploading: {file_name}")
     def _create_part_file(self, source_path: str, part_path: str, 
                          part_num: int, part_size: int):
         """Create a part file using buffered reading"""
+        # calculate starting byte offset for this part
         shift = part_num * part_size
         
 print(f"Writing part {part_num} at offset {shift}")
