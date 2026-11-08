@@ -40,20 +40,20 @@ OAUTH_REDIRECT_BASE = "https://oauth.pstmn.io/v1/callback"
 class TokenManager:
     """Manages user OAuth tokens with persistence"""
     
-    def __init__(self, token_file: str):
-        self.token_file = token_file
+    def __init__(self, tok_file: str):
+        self.tok_file = tok_file
         self.tokens: Dict[int, dict] = self._load_tokens()
     
     def _load_tokens(self) -> Dict[int, dict]:
         """Load tokens from file"""
-        if os.path.exists(self.token_file):
-            with open(self.token_file, 'r') as f:
+        if os.path.exists(self.tok_file):
+            with open(self.tok_file, 'r') as f:
                 return {int(k): v for k, v in json.load(f).items()}
         return {}
     
     def _save_tokens(self):
         """Save tokens to file"""
-        with open(self.token_file, 'w') as f:
+        with open(self.tok_file, 'w') as f:
             # convert keys to strings because json needs them that way
             json.dump({str(k): v for k, v in self.tokens.items()}, f, indent=2)
     
