@@ -224,7 +224,7 @@ print(f"Uploading: {file_name}")
         part_ids = []
         
         for part_num in range(num_parts):
-            part_name = f"{file_name}.part{part_num + 1:03d}"
+            p_name = f"{file_name}.part{part_num + 1:03d}"
             part_path = f"{file_path}.part{part_num + 1:03d}"
             
             # Create part file
@@ -239,7 +239,7 @@ print(f"Uploading: {file_name}")
                 if progress_callback:
                     progress_callback(f"Uploading part {part_num + 1}/{num_parts}...")
                 
-                file_id = await self.upload_file(user_id, part_path, part_name, 
+                file_id = await self.upload_file(user_id, part_path, p_name, 
                                                 progress_callback)
                 if file_id:
                     part_ids.append(file_id)
